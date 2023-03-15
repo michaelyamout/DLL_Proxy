@@ -1,3 +1,10 @@
+Usage
+```
+pip3 install -r requirements.txt
+
+python3 dll_export_copy_v2.py [dll to take exports] [dll to place exports] 
+```
+
 The script uses the pefile library to read and modify the DLL files. First, the script specifies the input and output DLL files. Then, it opens the input DLL file and extracts the exports using the DIRECTORY_ENTRY_EXPORT attribute of the PE object. Next, it opens the output DLL file and updates its existing exports with the ones from the input DLL file. If there are additional exports in the input DLL file that are not present in the output DLL file, the script adds them. Finally, it saves the modified DLL file using the write method of the PE object.
 
 Note that this script assumes that both the input and output DLL files exist and are valid. It also assumes that the output DLL file already has exports that can be updated with the ones from the input DLL file. If either of these assumptions is incorrect, the script may produce unexpected results or errors.
